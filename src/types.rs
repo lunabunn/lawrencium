@@ -28,6 +28,7 @@ pub type c_float = f32;
 pub type c_double = f64;
 
 pub type PROC = *mut c_void;
+pub enum __some_function {}
 
 typedef!(*mut c_void, HANDLE);
 typedef!(*mut c_void, PVOID);
@@ -61,6 +62,9 @@ typedef!(c_uchar, BYTE);
 typedef!(*mut MSG, LPMSG);
 typedef!(WORD, ATOM);
 typedef!(*mut c_void, LPVOID);
+typedef!(*mut __some_function, FARPROC);
+typedef!(*mut __some_function, NEARPROC);
+typedef!(*mut __some_function, PROC);
 typedef!(
   Option<unsafe extern "system" fn(HWND, UINT, WPARAM, LPARAM) -> LRESULT>,
   WNDPROC
